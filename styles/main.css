@@ -11,7 +11,7 @@ html {
 }
 
 
-img {
+.new-frog-image, .classic-frog-image {
   width: 100px;
   margin-top: 1em;
 }
@@ -107,4 +107,11 @@ img {
 
 .classic-frog .top-container, .bottom-container { 
   height: 4em;
+}
+
+.github-link {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  z-index: 10;
 }

@@ -10,9 +10,21 @@ html {
   font-family: 'Gloria Hallelujah', cursive;
 }
 
+
 img {
   width: 100px;
+  margin-top: 1em;
+}
+
+.new-frog-image {
   margin-top: 2em;
+}
+
+.new-frog .classic-frog-image {
+  display: none;
+}
+.classic-frog .new-frog-image {
+  display: none;
 }
 
 .middle-container{
@@ -41,14 +53,16 @@ img {
   width: 200px;
 }
 
-.speech-bubble {
+.new-frog .speech-bubble {
   position: relative;
   background: var(--speech-bg-color);
   border-radius: .4em;
+}
+.speech-bubble {
   display:none;
 }
 
-.speech-bubble-top:after {
+.new-frog .speech-bubble-top:after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -63,7 +77,7 @@ img {
   margin-bottom: -20px;
 }
 
-.speech-bubble-bottom:after {
+.new-frog .speech-bubble-bottom:after {
   content: '';
   position: absolute;
   top: 0;
@@ -77,15 +91,20 @@ img {
   margin-left: -10px;
   margin-top: -20px;
 }
-
 .text-container {
   height: 2em;
   padding: 1em 0em;
+}
+.new-frog .text-container {
   color: white;
   font-weight: bold;
   text-shadow: 0 -0.05em 0.1em rgb(0 0 0 / 30%);
 }
 
-.top-container, .bottom-container { 
+.new-frog .top-container, .bottom-container { 
   height: 5em;
+}
+
+.classic-frog .top-container, .bottom-container { 
+  height: 4em;
 }

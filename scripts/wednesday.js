@@ -74,9 +74,20 @@ function HandleFrogClick() {
   }
 }
 
+// we don't have a dark and light mode, just a new and classic frog modes
+function HandleToggleTypeClick() {
+    if($("#togBtn").is(":checked")) {
+        $(".parent").removeClass("classic-frog").addClass("new-frog");
+    } else {
+        $(".parent").removeClass("new-frog").addClass("classic-frog");
+    }
+}
+
 
 $(document).ready(function() {
   $(".frog-image").on("click", HandleFrogClick);
+
+    $("#togBtn").on("click", HandleToggleTypeClick);
 
   // initially, just run the animation
   setTimeout(DoAnimation, 2000);

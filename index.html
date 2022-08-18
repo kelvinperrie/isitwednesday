@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <!-- <link rel="stylesheet" href="libraries/bootstrap-4.3.1-dist/css/bootstrap.min.css" type="text/css"> -->
+    <link rel="stylesheet" href="styles/main.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <style>
+
+    </style>
+    <title>is it wednesday</title>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child">
+        <div class="top-container">
+          <div class="text-container speech-bubble speech-bubble-top">
+            
+          </div>
+        </div>
+        <div class="middle-container"><img src="images/new-frog.png" alt="frog"></div>
+        <div class="bottom-container">
+          <div class="text-container speech-bubble speech-bubble-bottom">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+
+      const d = new Date();
+      let day = d.getDay();
+
+      let itIsWednesday = day === 3;
+
+      let topText = itIsWednesday ? "it is Wednesday" : "it is not Wednesday";
+      let bottomText = "my dudes";
+
+      function OutputText(textToOutput, element, completeCallback) {
+        
+        if(textToOutput == "") {
+          if(completeCallback != null) {
+            completeCallback();
+          }
+          return;
+        }
+        let nextChar = textToOutput.substring(0,1);
+        textToOutput = textToOutput.substring(1);
+
+        $(element).html( $(element).html()+ nextChar );
+
+        setTimeout(function() { OutputText(textToOutput, element, completeCallback) }, 50 );
+      }
+
+      function DoAnimation() {
+        DoTopBubble();
+      }
+
+      function DoTopBubble() {
+        $(".speech-bubble-top").show();
+        OutputText(topText, ".speech-bubble-top", function() { setTimeout(DoBottomBubble, 500); });
+      }
+      function DoBottomBubble() {
+        $(".speech-bubble-bottom").show();
+        OutputText(bottomText, ".speech-bubble-bottom");
+      }
+
+      setTimeout(DoAnimation, 2000);
+    </script>
+    <script src="scripts/jquery-3.3.1.min.js"></script>
+    <!-- <script src="libraries/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script> -->
+  </body>
+</html>

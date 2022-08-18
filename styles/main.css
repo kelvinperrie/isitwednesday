@@ -1,0 +1,91 @@
+:root {
+  --speech-bg-color: #5d914d;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+img {
+  width: 100px;
+  margin-top: 2em;
+}
+
+.middle-container{
+  height: 8em;
+}
+
+.parent {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  /* background-color: gray; */
+  display: flex;
+}
+
+.child {
+  margin: auto;
+  background-color: white;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  display: flex;
+}
+.child div {
+  text-align: center;
+  width: 200px;
+}
+
+.speech-bubble {
+  position: relative;
+  background: var(--speech-bg-color);
+  border-radius: .4em;
+  display:none;
+}
+
+.speech-bubble-top:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top-color: var(--speech-bg-color);
+  border-bottom: 0;
+  border-right: 0;
+  margin-left: -10px;
+  margin-bottom: -20px;
+}
+
+.speech-bubble-bottom:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 60%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-bottom-color: var(--speech-bg-color);
+  border-top: 0;
+  border-left: 0;
+  margin-left: -10px;
+  margin-top: -20px;
+}
+
+.text-container {
+  height: 2em;
+  padding: 1em 0em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 -0.05em 0.1em rgb(0 0 0 / 30%);
+}
+
+.top-container, .bottom-container { 
+  height: 5em;
+}

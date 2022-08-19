@@ -83,8 +83,7 @@ function HandleToggleTypeClick() {
         $(".parent").removeClass("new-frog").addClass("classic-frog");
         type = "classic";
     }
-    console.log("setting cookie value to " + type)
-    setCookie("frogType", type);
+    setCookie("frogType", type);  // store the users preference of frog
 }
 
 
@@ -93,10 +92,9 @@ $(document).ready(function() {
 
   $("#togBtn").on("click", HandleToggleTypeClick);
 
+  // see if they previously set the frog to classic mode, if so, use that instead
   var lastFrogType = getCookie("frogType");
-  console.log("got cookie value of " + lastFrogType)
   if(lastFrogType && lastFrogType == "classic") {
-    console.log("doing click on toggle")
     $('#togBtn').trigger('click');
   }
 

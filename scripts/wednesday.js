@@ -49,7 +49,7 @@ function DoBottomBubble() {
   let fadeIn = 500;
   $(".speech-bubble-bottom").fadeIn(fadeIn);
   setTimeout( function() {
-    OutputText(bottomText, ".speech-bubble-bottom", function() { status = 'complete' });
+    OutputText(bottomText, ".speech-bubble-bottom", function() { status = 'complete'; $(".click-again-help").fadeIn(5000); });
   }, fadeIn);
 }
 
@@ -61,7 +61,10 @@ function Reset() {
     $(".speech-bubble-bottom").hide();
     $(".speech-bubble-bottom").html("");
     status = 'readyToRun';
+    $(".click-again-help").hide();
   }
+  // we're just going to go straight into another check. You can't stop me.
+  setTimeout(HandleFrogClick, 1000);
 }
 
 // someone poked the frog

@@ -1,5 +1,5 @@
 :root {
-  --speech-bg-color: #5d914d;
+  --speech-bg-color: #99cd8a;
 }
 
 * {
@@ -96,9 +96,9 @@ html {
   padding: 1em 0em;
 }
 .new-frog .text-container {
-  color: white;
-  font-weight: bold;
-  text-shadow: 0 -0.05em 0.1em rgb(0 0 0 / 30%);
+  color: #444444;
+  /* font-weight: bold;
+  text-shadow: 0 -0.05em 0.1em rgb(0 0 0 / 30%); */
 }
 
 .new-frog .top-container, .bottom-container { 
